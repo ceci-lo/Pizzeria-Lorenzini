@@ -47,7 +47,7 @@
               Usted se ha registrado correctamente
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" onclick="location.href = '/login.html';">Aceptar</button>
+              <button type="button" class="btn btn-primary" onclick="location.href = '/';">Aceptar</button>
             </div>
           </div>
         </div>
