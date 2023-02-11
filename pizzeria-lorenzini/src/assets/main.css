@@ -1,35 +1,101 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
+.imgPizzeria {
+  object-fit: fill;
+  width: 100%;
+  height: 550px;
+  box-shadow: -2px 4px 40px 0px rgba(84, 77, 77, 0.75);
+  -webkit-box-shadow: -2px 4px 40px 0px rgba(84, 77, 77, 0.75);
+  -moz-box-shadow: -2px 4px 40px 0px rgba(84, 77, 77, 0.75);
+}
+.divPizzeria {
+  width: 100%;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.second-part {
+  padding-top: 2%;
+}
+.productoSection {
+  padding-top: 2%;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.productoRow {
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  margin-top: 1% !important;
+  box-shadow: -2px 4px 40px 0px rgba(179, 172, 172, 0.75);
+  -webkit-box-shadow: -2px 4px 40px 0px rgba(179, 172, 172, 0.75);
+  -moz-box-shadow: -2px 4px 40px 0px rgba(179, 172, 172, 0.75);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+.footer {
+  padding: 50px;
+  text-align: center;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+.estiquetaA {
+  padding-right: 10px;
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+.log {
+  height: 500px;
+}
+.log-form {
+  height: 350px;
+}
+
+.log-bottom {
+  padding-top: 2%;
+}
+.reg-form {
+  height: 600px;
+}
+.reg-bottom {
+  margin-bottom: 15px;
+}
+.img-card {
+  object-fit: fill !important;
+  height: 230px !important;
+}
+.cantidad {
+  width: 5%;
 }
