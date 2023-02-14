@@ -55,6 +55,15 @@ let productos = [
     img: "img/pizzaToscana.jpg",
   },
 ];
+
+let count = 0;
+let cantidad;
+function aumentar() {
+  cantidad = document.getElementById("cantidad").value = count++;
+}
+function disminuir() {
+  cantidad = document.getElementById("cantidad").value = --count;
+}
 </script>
 <template>
    <div class="divPizzeria">
@@ -101,7 +110,7 @@ let productos = [
                   </div>
                   <div class="modal-body">
                     <div class="mb-3">
-                      <p>Unidades</p><button id="disminuir" onclick="disminuir()" class="btn btn-danger">-</button><input class="cantidad" type="text" value ="0" id="cantidad"/><button class="btn btn-danger" id="aumentar" onclick="aumentar()">+</button>
+                      <p>Unidades</p><button id="disminuir" @click="disminuir()" class="btn btn-danger">-</button><input class="cantidad" type="text" value ="0" id="cantidad"/><button class="btn btn-danger" id="aumentar" @click="aumentar()">+</button>
                     </div>
                     <div class="mb-3">
                       <label for="message-text" class="col-form-label">Nota para producto</label>

@@ -25,7 +25,7 @@ console.log('hola vue')
             <div class="row">
               <div class="col-3 btn-group offset-8" role="group">
                 <button type="button" class="btn btn-outline-dark">
-                  <a class="nav-link" href="/login.html">Log in</a>
+                  <router-link to="/login">Login</router-link>
                 </button>
                 <button type="button" class="btn btn-dark">
                     <router-link to="/register">register</router-link>
