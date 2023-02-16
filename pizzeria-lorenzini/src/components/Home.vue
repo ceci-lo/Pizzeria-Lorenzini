@@ -1,6 +1,7 @@
 <script setup>
 let productos = [
   {
+    id: 1,
     Nombre: "Pizza Calabreza",
     Ingredientes:
       "Salsa de tomate, oregano, muzarella, Calabreza y aceitunas",
@@ -9,6 +10,7 @@ let productos = [
     img: "img/pizzaCalabreza.jpg",
   },
   {
+    id: 2,
     Nombre: "Pizza Cuatro Quesos",
     Ingredientes:
       "Salsa de tomate, Holanda, muzarella, Roquefort y queso parmesano",
@@ -17,6 +19,7 @@ let productos = [
     img: "img/pizzaCuatroQuesos.jpg",
   },
   {
+    id: 3, 
     Nombre: "Pizza Especial",
     Ingredientes: "Salsa de tomate, muzarella, jamon cocido  y morrones",
     Porciones: "8 porciones",
@@ -24,6 +27,7 @@ let productos = [
     img: "img/pizzaEspecial.jpg",
   },
   {
+    id: 4,
     Nombre: "Pizza Margaritha",
     Ingredientes:
       "Salsa de tomate, muzarella, Tomate cubeteado y alabahaca",
@@ -32,6 +36,7 @@ let productos = [
     img: "img/pizzaMargarita.jpg",
   },
   {
+    id: 5,
     Nombre: "Pizza Napolitana",
     Ingredientes:
       "Salsa de tomate, rodajas de Tomate, oregano y aceitunas negras",
@@ -40,6 +45,7 @@ let productos = [
     img: "img/pizzaNapolitana.jpg",
   },
   {
+    id: 6,
     Nombre: "Pizza Pepperoni",
     Ingredientes: "Salsa de tomate, muzarella, peperoni",
     Porciones: "8 porciones",
@@ -47,6 +53,7 @@ let productos = [
     img: "img/pizzaPepperoni.webp",
   },
   {
+    id: 7,
     Nombre: "Pizza Toscana",
     Ingredientes:
       "Salsa de tomate, muzarella, rucula, jamon crudo, tomates cherrys y aceitunas negras",
@@ -64,6 +71,19 @@ function aumentar() {
 function disminuir() {
   cantidad = document.getElementById("cantidad").value = --count;
 }
+
+let pizza = {};
+let pizzaSeleccionada = (producto) => {
+pizza = {
+  Nombre: producto.Nombre,
+  Ingredientes:  producto.Ingredientes,
+  Precio: producto.Precio,
+  img: producto.img
+}
+console.log(pizza);
+}
+console.log(pizza);
+
 </script>
 <template>
    <div class="divPizzeria">
@@ -85,30 +105,36 @@ function disminuir() {
 <div id="productos" class="container productoSection">
 
 <div class="row">
-  <div class="card col-6 productoRow" style="max-width: 500px" v-for="producto in productos">
+  <div class="card col-6 productoRow" style="max-width: 500px" v-for="producto in productos" >
     <div class="row g-0">
-      <div class="col-md-4">
+      <div class="col-md-4"> 
         <img :src=producto.img class="img-fluid img-card" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{ producto.Nombre }}</h5>
+          <h5 class="card-title" >{{ producto.Nombre }} </h5>
           <p class="card-text">{{ producto.Ingredientes }} </p>
           <p><strong>$ {{ producto.Precio}}</strong></p>
           <div>
             <a href="#" class="estiquetaA">ver más</a>
 
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >+</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" @click="pizzaSeleccionada(producto)">+</button>
            
             <!--modal boton +-->
             <div  class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
+              <div class="modal-dialog" >
+                <div class="modal-content" v-for="seleccion in pizza" >
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">{{producto.Nombre}}</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ seleccion.Nombre }}</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
+                    <div >
+                      <img :src=seleccion.img />
+                    </div>
+                    <div>
+                      {{  seleccion.Ingredientes }}
+                    </div>
                     <div class="mb-3">
                       <p>Unidades</p><button id="disminuir" @click="disminuir()" class="btn btn-danger">-</button><input class="cantidad" type="text" value ="0" id="cantidad"/><button class="btn btn-danger" id="aumentar" @click="aumentar()">+</button>
                     </div>
