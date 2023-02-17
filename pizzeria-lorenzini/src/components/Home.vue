@@ -72,17 +72,26 @@ function disminuir() {
   cantidad = document.getElementById("cantidad").value = --count;
 }
 
-let pizza = {};
-let pizzaSeleccionada = (producto) => {
-pizza = {
+let pizza = {
+  id: 0,
+  Nombre: '',
+  Ingredientes:'',
+  Precio: '',
+  img:''
+};
+
+const pizzaSeleccionada = (producto) => {
+pizza  = {
+  id: producto.id,
   Nombre: producto.Nombre,
   Ingredientes:  producto.Ingredientes,
   Precio: producto.Precio,
   img: producto.img
 }
-console.log(pizza);
+console.log(pizza)
+return pizza;                                                                                          
 }
-console.log(pizza);
+console.log(pizza)
 
 </script>
 <template>
@@ -123,17 +132,17 @@ console.log(pizza);
             <!--modal boton +-->
             <div  class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog" >
-                <div class="modal-content" v-for="seleccion in pizza" >
+                <div class="modal-content"  >
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ seleccion.Nombre }}</h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ pizza.Nombre }}</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <div >
-                      <img :src=seleccion.img />
+                      <img :src=pizza.img />
                     </div>
                     <div>
-                      {{  seleccion.Ingredientes }}
+                      {{  pizza.Ingredientes }}
                     </div>
                     <div class="mb-3">
                       <p>Unidades</p><button id="disminuir" @click="disminuir()" class="btn btn-danger">-</button><input class="cantidad" type="text" value ="0" id="cantidad"/><button class="btn btn-danger" id="aumentar" @click="aumentar()">+</button>
