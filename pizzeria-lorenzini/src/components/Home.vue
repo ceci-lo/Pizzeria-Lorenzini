@@ -73,7 +73,7 @@ function disminuir() {
 
 const pizza = ref({});
 
-const pizzaSeleccionada = (producto) => {
+const seleccionPizza = (producto) => {
   pizza.value = producto;
   console.log(pizza);
 };
@@ -134,7 +134,7 @@ const pizzaSeleccionada = (producto) => {
                   class="btn btn-danger"
                   data-bs-toggle="modal"
                   data-bs-target="#staticBackdrop"
-                  @click.prevent="pizzaSeleccionada(producto)"
+                  @click.prevent="seleccionPizza(producto)"
                 >
                   +
                 </button>
