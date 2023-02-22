@@ -64,6 +64,7 @@ let productos = [
 
 let count = 0;
 let cantidad;
+
 function aumentar() {
   cantidad = document.getElementById("cantidad").value = ++count;
 }
@@ -77,6 +78,7 @@ const seleccionPizza = (producto) => {
   pizza.value = producto;
   console.log(pizza);
 };
+
 </script>
 
 <template>
@@ -127,8 +129,6 @@ const seleccionPizza = (producto) => {
                 <strong>$ {{ producto.Precio }}</strong>
               </p>
               <div>
-                <a href="#" class="estiquetaA">ver más</a>
-
                 <button
                   type="button"
                   class="btn btn-danger"
@@ -163,14 +163,15 @@ const seleccionPizza = (producto) => {
                         ></button>
                       </div>
                       <div class="modal-body">
-                        <div>
-                          <img :src="pizza.img" />
+                        <div class="box-modal-img">
+                          <img class="img" :src="pizza.img"  />
                         </div>
-                        <div>
+                        <div class="box-modal-ingredientes">
                           {{ pizza.Ingredientes }}
                         </div>
-                        <div class="mb-3">
-                          <p>Unidades</p>
+                        <div class="mb-3 box-modal-unidades">
+                          <h4>Unidades</h4>
+                          <div>
                           <button
                             id="disminuir"
                             @click="disminuir()"
@@ -189,6 +190,7 @@ const seleccionPizza = (producto) => {
                           >
                             +
                           </button>
+                          </div>
                         </div>
                         <div class="mb-3">
                           <label for="message-text" class="col-form-label"
@@ -201,7 +203,7 @@ const seleccionPizza = (producto) => {
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-danger">
                           Aceptar
                         </button>
                       </div>
@@ -223,3 +225,28 @@ const seleccionPizza = (producto) => {
     <p>Copyrigth Cecilia Lorenzini 2022</p>
   </div>
 </template>
+<style>
+
+<!--MODAL STYLE-->
+  .img{
+    width: 400px;
+    height: 200px;
+    align-content: center;
+  }
+  .box-modal-img{
+    padding-bottom: 20px;
+  }
+.box-modal-ingredientes{
+  padding-bottom: 20px;
+}
+  .box-modal-unidades{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cantidad{
+    width: 25px;
+  }
+
+</style>
