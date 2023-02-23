@@ -64,13 +64,12 @@ let productos = [
 ];
 
 let count = ref(0);
-let cantidad;
 
 function aumentar() {
-  cantidad = document.getElementById("cantidad").value = ++count;
+  count.value++;
 }
 function disminuir() {
-  cantidad = document.getElementById("cantidad").value = --count;
+  count.value--;
 }
 
 const pizza = ref({});
@@ -79,7 +78,6 @@ const seleccionPizza = (producto) => {
   pizza.value = producto;
   console.log(pizza);
 };
-
 </script>
 
 <template>
@@ -165,7 +163,7 @@ const seleccionPizza = (producto) => {
                       </div>
                       <div class="modal-body">
                         <div class="box-modal-img">
-                          <img class="img" :src="pizza.img"  />
+                          <img class="img" :src="pizza.img" />
                         </div>
                         <div class="box-modal-ingredientes">
                           {{ pizza.Ingredientes }}
@@ -173,24 +171,20 @@ const seleccionPizza = (producto) => {
                         <div class="mb-3 box-modal-unidades">
                           <h4>Unidades</h4>
                           <div>
-                          <button
-                            id="disminuir"
-                            @click="disminuir()"
-                            class="btn btn-danger"
-                          >
-                            -</button
-                          ><input
-                            class="cantidad"
-                            type="text"
-                            value="0"
-                            id="cantidad"
-                          /><button
-                            class="btn btn-danger"
-                            id="aumentar"
-                            @click="aumentar()"
-                          >
-                            +
-                          </button>
+                            <button
+                              id="disminuir"
+                              @click="disminuir()"
+                              class="btn btn-danger"
+                            >
+                              -</button
+                            >{{ count
+                            }}<button
+                              class="btn btn-danger"
+                              id="aumentar"
+                              @click="aumentar()"
+                            >
+                              +
+                            </button>
                           </div>
                         </div>
                         <div class="mb-3">
@@ -227,27 +221,24 @@ const seleccionPizza = (producto) => {
   </div>
 </template>
 <style>
-
-<!--MODAL STYLE-->
-  .img{
-    width: 400px;
-    height: 200px;
-    align-content: center;
-  }
-  .box-modal-img{
-    padding-bottom: 20px;
-  }
-.box-modal-ingredientes{
+<!--MODAL STYLE-- > .img {
+  width: 400px;
+  height: 200px;
+  align-content: center;
+}
+.box-modal-img {
   padding-bottom: 20px;
 }
-  .box-modal-unidades{
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-  }
+.box-modal-ingredientes {
+  padding-bottom: 20px;
+}
+.box-modal-unidades {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
 
-  .cantidad{
-    width: 25px;
-  }
-
+.cantidad {
+  width: 25px;
+}
 </style>
