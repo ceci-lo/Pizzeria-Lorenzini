@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+
 let productos = [
   {
     id: 1,
@@ -62,7 +63,7 @@ let productos = [
   },
 ];
 
-let count = 0;
+let count = ref(0);
 let cantidad;
 function aumentar() {
   cantidad = document.getElementById("cantidad").value = ++count;
