@@ -22,7 +22,7 @@ console.log("hola vue");
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page"
-                ><router-link to="/">home</router-link></a
+                ><router-link  to="/" style="text-decoration: none; color: inherit">home</router-link></a
               >
             </li>
             <li class="nav-item">
@@ -33,14 +33,14 @@ console.log("hola vue");
             <div class="row">
               <div class="col-3 btn-group offset-8" role="group">
                 <button type="button" class="btn btn-outline-dark">
-                  <router-link to="/login">Login</router-link>
+                  <router-link to="/login" style="text-decoration: none; color: inherit">Login</router-link>
                 </button>
                 <button type="button" class="btn btn-dark">
-                  <router-link to="/register">register</router-link>
+                  <router-link to="/register" style="text-decoration: none; color: inherit">register</router-link>
                 </button>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page">
-                    <router-link to="/carrito">carrito</router-link></a
+                <li class="nav-item"  style=" list-style: none;">
+                  <a class="nav-link active">
+                    <router-link to="/carrito" style="text-decoration: none; color: inherit">carrito</router-link></a
                   >
                 </li>
               </div>
