@@ -8,7 +8,7 @@ import Login from "./components/Login.vue";
 import Carrito from "./components/Carrito.vue";
 
 const routes = [
-  { path: "/", component: Home },
+  { path: "/", component: Home, name:'home' },
   { path: "/register", component: Register },
   { path: "/login", component: Login },
   { path: "/carrito", component: Carrito },

@@ -76,8 +76,13 @@ const pizza = ref({});
 
 const seleccionPizza = (producto) => {
   pizza.value = producto;
-  console.log(pizza);
 };
+const carrito = [];
+
+const agregarProductoCarrito = () => {
+        carrito.push(pizza.value);
+        
+}
 </script>
 
 <template>
@@ -198,7 +203,7 @@ const seleccionPizza = (producto) => {
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" @click="agregarProductoCarrito()">
                           Aceptar
                         </button>
                       </div>
